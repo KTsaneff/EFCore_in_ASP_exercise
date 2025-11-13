@@ -45,6 +45,7 @@ wwwroot/            → Static files (CSS, JS)
 ✔ Cleaned JS files (only site.js kept)
 
 🧪 What Students Must Do
+
 1️⃣ Implement EF Core
 
 Create the models
