@@ -130,8 +130,9 @@ namespace MiniCinemaApp.Controllers
                 parsedDate = DateTime.Today;
             }
 
-            var model = new AddMovieFormModel
+            var model = new EditMovieFormModel
             {
+                Id = movie.Id,
                 Title = movie.Title,
                 Genre = movie.Genre,
                 Director = movie.Director,
@@ -145,8 +146,13 @@ namespace MiniCinemaApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(int id, AddMovieFormModel model)
+        public IActionResult Edit(int id, EditMovieFormModel model)
         {
+            if (id != model.Id)
+            {
+                return BadRequest();
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -170,6 +176,7 @@ namespace MiniCinemaApp.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
 
         [HttpGet]
         public IActionResult Delete(int id)

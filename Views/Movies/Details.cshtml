@@ -49,13 +49,19 @@
                         <i class="bi bi-arrow-left"></i> Back to Movies
                     </a>
 
+                    <a asp-action="Edit"
+                       asp-route-id="@Model.Id"
+                       class="btn btn-primary">
+                        <i class="bi bi-pencil-square"></i> Edit Movie
+                    </a>
+
                     <a asp-action="Delete"
                        asp-route-id="@Model.Id"
                        class="btn btn-danger">
                         <i class="bi bi-trash"></i> Delete Movie
                     </a>
-
                 </div>
+
 
             </div>
         </div>
